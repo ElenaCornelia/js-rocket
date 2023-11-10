@@ -1,4 +1,17 @@
 
+// This function does this.
+var doCoolStuff=function(){
+  var currentClassName= document.getElementById('cool').classname='cool red';
+  if(currentClassName=='cool'){
+  } else {
+    document.getElementById('cool').classname='cool red';
+  };
+  // changing class name
+  document.getElementById('cool').classname='cool';
+};
+
+
+
 var sayMyName=function(name){
   alert('My name is: '+name);
 }
@@ -30,5 +43,5 @@ var car = {
                   this.isTurnedOn=false;
           }
   }
-};
+}
 console.log('hello there friends!');
