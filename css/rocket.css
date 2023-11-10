@@ -1,3 +1,7 @@
+body {
+  font-family: 'helvetica', 'arial', sans-serif;
+}
+
 .left {
   background-color: aquamarine;
   position: fixed;
@@ -5,6 +9,12 @@
   height: 100%;
   top: 0;
   left: 9;
+}
+
+
+.interface {
+  text-align: center;
+  padding: 20px;
 }
 
 .right {
@@ -17,31 +27,82 @@
 }
 
 .ground {
-  background-color: green;
+  background: url('../img/ground.png') no-repeat center center;
   position: absolute;
-  border: 0;
+  bottom: 10px;
   left: 0;
-  bottom: 20px;
   width: 100%;
   height: 20px;
 }
 
+.nervous {
+  position: absolute;
+  bottom: 220px;
+  left: 50%;
+  margin-left: -180px;
+  background: url('../img/nervous.png') no-repeat 0 0;
+  width: 223px;
+  height: 100px;
+  display: none;
+}
+
+.nervous.show {
+  display: block;
+}
+
+.cantwait {
+  position: absolute;
+  bottom: 220px;
+  left: 50%;
+  margin-left: px;
+  background: url('../img/cant-wait.png') no-repeat 0 0;
+  width: 206px;
+  height: 65px;
+  display: none;
+}
+
+.cantwait.show {
+  display: block;
+}
+
+
 .rocket {
   position: absolute;
   left: 50%;
-  bottom: 20px;
-  width: 20px;
-  height: 100px;
-  background-color: red;
+  bottom: -20px;
+  width: 143px;
+  height: 272px;
+  margin-left: -71.5px;
+  background: url('../img/rocket-state1.png') no-repeat 0 0;
   transition: bottom 10000ms;
 }
 
-body.body-state3 .rocket{
+/* rocket bg image*/
+body.body-state2 .rocket {
+  background: url('../img/rocket-state2.gif');
+}
+
+
+body.body-state3 .rocket,
+body.body-state4 .rocket {
+  background: url('../img/rocket-state3.gif') no-repeat 0 0;
+}
+
+body.body-state5 .rocket {
+  background: url('../img/boom.png');
+  width: 209px;
+  height: 200px;
+  margin-left: -104.5px;
+}
+
+body.body-state1 .rocket {
   transition: none;
 }
 
+
+
 body.body-state3 .rocket,
-body.body-state4 .rocket{
+body.body-state4 .rocket {
   bottom: 5000px;
 }
 
@@ -65,14 +126,38 @@ body.body-state4 .rocket{
   display: none;
 }
 
-body.body-state1 .state1{display: block;}
-body.body-state2 .state2{display: block;}
-body.body-state3 .state3{display: block;}
-body.body-state4 .state4{display: block;}
-body.body-state5 .state5{display: block;}
-
-a {
-
+body.body-state1 .state1 {
+  display: block;
 }
 
-a.button {}
+body.body-state2 .state2 {
+  display: block;
+}
+
+body.body-state3 .state3 {
+  display: block;
+}
+
+body.body-state4 .state4 {
+  display: block;
+}
+
+body.body-state5 .state5 {
+  display: block;
+}
+
+a {}
+
+a.button {
+  display: inline-block;
+  background-color: white;
+  color: black;
+  padding: 20px 40px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius:10px;
+  transition: color 300ms;
+}
+a:hover{
+  color: red;
+}
